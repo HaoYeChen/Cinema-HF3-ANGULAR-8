@@ -1,0 +1,31 @@
+<form (ngSubmit)="postMovie()">
+  <label>Title: </label><input type="text" name="title" [(ngModel)]="title" placeholder="add title"> <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
+  <br><label class="label2">Runtime: </label> <input type="number" name="runtime" [(ngModel)]="runtime" placeholder="add runtime">
+  <br><label class="label2">Description: </label> <input type="text" name="description" [(ngModel)]="description" placeholder="add description">
+  <br><label class="label2">Releasedate: </label> <input type="date" name="releasedate" [(ngModel)]="releasedate" placeholder="add releasedate">
+
+
+
+
+
+  <br><select [(ngModel)]="temp" name="temp" multiple> <!-- husk name eller siger den felj på browers console  -->
+    <option *ngFor="let genreObject of genres" [value]="genreObject.genreId">{{genreObject.genre}}</option>
+  </select>
+
+  <br><input type="submit" value="Add Movie">
+  </form>
+
+
+<div *ngFor="let movieObj of movies">
+    <label>MovieId: {{movieObj.movieId}} | Title: {{movieObj.title}} | Runtime: {{movieObj.runtime}} | <!--Genre tilknyttet en app-movie-->
+    <span *ngFor="let genre of movieObj.movieGenre">Genre: {{genre.genre.genre}}</span>
+  </label>
+</div>
+
+
+<div *ngFor="let movieObj of movies">
+  <button (click)="allShowToMovie(movieObj)">see all shows</button>
+  MovieId {{movieObj.movieId}} | Title {{movieObj.title}}
+  <button (click)="deleteMovie(movieObj.movieId)">Delete</button>
+</div>
+

@@ -1,0 +1,17 @@
+<p>admin-movie works!</p>
+
+<div>
+
+  <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
+  <label for="">Title</label>       <input type="text"    [(ngModel)]="movie.title">
+  <label for="">Runtime</label>     <input type="number"  [(ngModel)]="movie.runtime">
+  <label for="">Description</label> <input type="text"    [(ngModel)]="movie.description">
+  <label for="">Releasedate</label> <input type="date"    [(ngModel)]="movie.releasedate">
+
+
+
+  <button>Create</button>
+  <button (click)=updateMovie()>Update</button>
+  <button>Delete</button>
+  <button (click)=searchMovie()>Search</button>
+</div>
