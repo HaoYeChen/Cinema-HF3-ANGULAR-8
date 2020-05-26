@@ -29,7 +29,6 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
 
-
     this.service.getMovies()
       .subscribe(arg => { //arg = får noget data fra API putter den i movies, som er en Callbackmetode - annonymous method
         this.movies = arg;
@@ -88,10 +87,7 @@ export class MovieComponent implements OnInit {
       //this.service.postMovie(movieToDelete).subscribe(
       this.service.deleteMovie(movieToDelete).subscribe();
     }
-    //put Movie
-    putMovie(){
 
-    }
     // svar(arg:Movie[]){
     //   this.movies=arg;
     //   console.log("test");

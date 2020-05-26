@@ -1,7 +1,26 @@
-<p>admin-movie works!</p>
+<p>admin-movie</p>
+
+<form (ngSubmit)="postMovie()">
+  <h1>Add Movie</h1>
+  <label>Title: </label><input type="text" name="title" [(ngModel)]="title" placeholder="add title"> <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
+  <br><label class="label2">Runtime: </label> <input type="number" name="runtime" [(ngModel)]="runtime" placeholder="add runtime">
+  <br><label class="label2">Description: </label> <input type="text" name="description" [(ngModel)]="description" placeholder="add description">
+  <br><label class="label2">Releasedate: </label> <input type="date" name="releasedate" [(ngModel)]="releasedate" placeholder="add releasedate">
+
+
+
+
+<!--Genre select box-->
+  <br><select [(ngModel)]="temp" name="temp" multiple> <!-- husk name eller siger den felj på browers console  -->
+    <option *ngFor="let genreObject of genres" [value]="genreObject.genreId">{{genreObject.genre}}</option>
+  </select>
+
+<!--submit button-->
+  <br><input type="submit" value="Add Movie">
+
+</form>
 
 <div>
-
   <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
   <label for="">Title</label>       <input type="text"    [(ngModel)]="movie.title">
   <label for="">Runtime</label>     <input type="number"  [(ngModel)]="movie.runtime">
@@ -10,8 +29,14 @@
 
 
 
-  <button>Create</button>
-  <button (click)=updateMovie()>Update</button>
-  <button>Delete</button>
-  <button (click)=searchMovie()>Search</button>
+  <button (click)="updateMovie()">Update</button>
+  <button (click)="searchMovie()">Search</button>
+</div>
+
+
+<!--displaying shows and delete button-->
+<div *ngFor="let movieObj of movies">
+  <!--<button (click)="allShowToMovie(movieObj)">see all shows</button>-->
+  MovieId {{movieObj.movieId}} | Title {{movieObj.title}}
+  <button (click)="deleteMovie(movieObj.movieId)">Delete</button>
 </div>

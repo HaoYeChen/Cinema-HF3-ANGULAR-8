@@ -5,6 +5,7 @@ import { Observable, observable } from 'rxjs';
 import { Movie } from '../model/Movie';
 import { Seat } from '../model/Seat';
 import { Show } from '../model/Show';
+import { Theater } from '../model/Theater';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 
@@ -22,13 +23,15 @@ export class HttpService {
   getSeat() {
     throw new Error("Method not implemented.");
   }
-
+  //cinema
   url:string = 'https://localhost:44368/api/movies';
   urlStart:string = 'https://localhost:44368/api/';
+  //register
   userURL:string =  'http://localhost:58435/api/';
 
   constructor(private http:HttpClient, private fb:FormBuilder) { }
 
+  //register
   formModel= this.fb.group({
     UserName: ['', Validators.required],
     Email: ['',Validators.email],

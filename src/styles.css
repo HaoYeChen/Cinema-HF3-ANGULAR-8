@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body{
+  /*background-color: #ffc107;*/
+}
+
 nav a:hover{
   color: #039be5;
   background-color: #CFD8DC;
@@ -7,12 +13,8 @@ nav a.active{
   color: #039be5;
 }
 
-body{
-  background-color: #ffc107;;
-}
-
 input.form-control,input.form-control:focus{
-  background-color: #ffc107;
+  /*background-color: #ffc107;*/
   color: black;
   border-color: black;
   border-radius: 0px;
