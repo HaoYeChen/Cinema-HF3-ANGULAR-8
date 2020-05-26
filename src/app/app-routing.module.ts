@@ -10,7 +10,8 @@ import { RegistrationComponent } from './components/user/registration/registrati
 
 //Routing and Navigation
 const routes: Routes = [
-  {path:'', redirectTo:'/user/registration', pathMatch: 'full'},
+  //{path:'', redirectTo:'/user/registration', pathMatch: 'full'},
+  {path:'', redirectTo:'movies', pathMatch: 'full'},
   {path: 'user', component:UserComponent, children:[
     {path:'registration', component:RegistrationComponent}
   ]},

@@ -41,11 +41,13 @@
       <th>MovieId</th>
       <th>Title</th>
       <th>Delete Button</th>
+      <th>All Shows</th>
     </tr>
     <tr *ngFor="let movieObj of movies">
       <td>{{movieObj.movieId}}</td>
       <td>{{movieObj.title}}</td>
       <td><button (click)="deleteMovie(movieObj.movieId)">Delete</button></td>
+      <td><button (click)="allShowToMovie(movieObj)">see all shows</button></td>
     </tr>
 
   </table>

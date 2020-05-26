@@ -38,9 +38,9 @@
       <th>Releasedate</th>
       <th>Genre</th>
     </tr>
-    <tr *ngFor="let movieObj of movies">
+    <tr *ngFor="let movieObj of movies; index as movieId">
       <!--<td>{{movieObj.movieId}}</td>-->
-      <td>{{movieObj.title}}</td>
+      <td><a routerLink="/show">{{movieObj.title}}</a></td>
       <td>{{movieObj.runtime}}</td>
       <td>{{movieObj.description}}</td>
       <td>{{movieObj.releasedate}}</td>
