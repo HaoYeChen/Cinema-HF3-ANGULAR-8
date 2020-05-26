@@ -1,7 +1,8 @@
-<p>admin-movie</p>
-
+<h1>Admin Movies</h1>
+<div class="flex-grid">
+  <div class="col">
+    <h2>Add Movie</h2>
 <form (ngSubmit)="postMovie()">
-  <h1>Add Movie</h1>
   <label>Title: </label><input type="text" name="title" [(ngModel)]="title" placeholder="add title"> <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
   <br><label class="label2">Runtime: </label> <input type="number" name="runtime" [(ngModel)]="runtime" placeholder="add runtime">
   <br><label class="label2">Description: </label> <input type="text" name="description" [(ngModel)]="description" placeholder="add description">
@@ -19,24 +20,43 @@
   <br><input type="submit" value="Add Movie">
 
 </form>
-
-<div>
+</div>
+<div class="col">
+  <h2>Update & Search</h2>
   <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
-  <label for="">Title</label>       <input type="text"    [(ngModel)]="movie.title">
-  <label for="">Runtime</label>     <input type="number"  [(ngModel)]="movie.runtime">
-  <label for="">Description</label> <input type="text"    [(ngModel)]="movie.description">
-  <label for="">Releasedate</label> <input type="date"    [(ngModel)]="movie.releasedate">
-
-
+  <label for="">Title:</label>       <input type="text"    [(ngModel)]="movie.title">
+  <label for="">Runtime:</label>     <input type="number"  [(ngModel)]="movie.runtime">
+  <label for="">Description:</label> <input type="text"    [(ngModel)]="movie.description">
+  <label for="">Releasedate:</label> <input type="date"    [(ngModel)]="movie.releasedate">
 
   <button (click)="updateMovie()">Update</button>
   <button (click)="searchMovie()">Search</button>
 </div>
+</div>
 
 
-<!--displaying shows and delete button-->
+<div>
+  <table class="admin-movies">
+    <tr>
+      <th>MovieId</th>
+      <th>Title</th>
+      <th>Delete Button</th>
+    </tr>
+    <tr *ngFor="let movieObj of movies">
+      <td>{{movieObj.movieId}}</td>
+      <td>{{movieObj.title}}</td>
+      <td><button (click)="deleteMovie(movieObj.movieId)">Delete</button></td>
+    </tr>
+
+  </table>
+  </div>
+
+
+
+<!--displaying shows and delete button
 <div *ngFor="let movieObj of movies">
-  <!--<button (click)="allShowToMovie(movieObj)">see all shows</button>-->
+
   MovieId {{movieObj.movieId}} | Title {{movieObj.title}}
   <button (click)="deleteMovie(movieObj.movieId)">Delete</button>
-</div>
+  <button (click)="allShowToMovie(movieObj)">see all shows</button>
+</div>-->

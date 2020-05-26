@@ -1,40 +1,21 @@
+<!-- <h1>Movies:</h1>
 <form (ngSubmit)="postMovie()">
   <label>Title: </label><input type="text" name="title" [(ngModel)]="title" placeholder="add title"> <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
-  <br><label class="label2">Runtime: </label> <input type="number" name="runtime" [(ngModel)]="runtime" placeholder="add runtime">
+  <!--<br><label class="label2">Runtime: </label> <input type="number" name="runtime" [(ngModel)]="runtime" placeholder="add runtime">
   <br><label class="label2">Description: </label> <input type="text" name="description" [(ngModel)]="description" placeholder="add description">
-  <br><label class="label2">Releasedate: </label> <input type="date" name="releasedate" [(ngModel)]="releasedate" placeholder="add releasedate">
-
+  <br><label class="label2">Releasedate: </label> <input type="date" name="releasedate" [(ngModel)]="releasedate" placeholder="add releasedate">-->
 
 
 
 <!--Genre select box-->
-  <br><select [(ngModel)]="temp" name="temp" multiple> <!-- husk name eller siger den felj på browers console  -->
-    <option *ngFor="let genreObject of genres" [value]="genreObject.genreId">{{genreObject.genre}}</option>
-  </select>
+  <!--<br><select [(ngModel)]="temp" name="temp" multiple> <!-- husk name eller siger den felj på browers console  -->
+    <!--<option *ngFor="let genreObject of genres" [value]="genreObject.genreId">{{genreObject.genre}}</option>
+  </select>-->
 
 <!--submit button-->
-  <br><input type="submit" value="Add Movie">
+  <!--<br><input type="submit" value="Add Movie">
 
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</form> -->
 
 
 <!--displaying info about movies and genres
@@ -49,9 +30,8 @@
 <!--displaying info about movies and genres-->
 <div>
   <table class="movies">
-
     <tr>
-      <th>MovieId</th>
+      <!--<th>MovieId</th>-->
       <th>Title</th>
       <th>Runtime</th>
       <th>Description</th>
@@ -59,7 +39,7 @@
       <th>Genre</th>
     </tr>
     <tr *ngFor="let movieObj of movies">
-      <td>{{movieObj.movieId}}</td>
+      <!--<td>{{movieObj.movieId}}</td>-->
       <td>{{movieObj.title}}</td>
       <td>{{movieObj.runtime}}</td>
       <td>{{movieObj.description}}</td>
@@ -71,10 +51,10 @@
   </table>
 </div>
 
-<!--displaying shows and delete button-->
+<!--displaying shows and delete button
 <div *ngFor="let movieObj of movies">
   <button (click)="allShowToMovie(movieObj)">see all shows</button>
   MovieId {{movieObj.movieId}} | Title {{movieObj.title}}
   <button (click)="deleteMovie(movieObj.movieId)">Delete</button>
-</div>
+</div>-->
 

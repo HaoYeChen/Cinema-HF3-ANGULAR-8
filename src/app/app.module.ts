@@ -21,6 +21,7 @@ import { AdminGenreComponent } from './admin/admin-genre/admin-genre.component';
 import { AdminSeatComponent } from './admin/admin-seat/admin-seat.component';
 import { AdminShowComponent } from './admin/admin-show/admin-show.component';
 import { AdminTheaterComponent } from './admin/admin-theater/admin-theater.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [ //components, directives, pipes
@@ -37,7 +38,8 @@ import { AdminTheaterComponent } from './admin/admin-theater/admin-theater.compo
     AdminGenreComponent,
     AdminSeatComponent,
     AdminShowComponent,
-    AdminTheaterComponent
+    AdminTheaterComponent,
+    MovieDetailsComponent
   ],
   imports: [ //Module
     BrowserModule,

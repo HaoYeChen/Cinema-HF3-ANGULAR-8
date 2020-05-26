@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 nav{
-  background: #0082e6;
+  background: #0C70BD;
   height: 80px;
   width: 100%;
 }
@@ -17,6 +17,7 @@ label.logo{
   padding: 0 140px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
+  cursor: pointer;
 }
 nav ul{
   float: right;
