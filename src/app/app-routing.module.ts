@@ -6,6 +6,7 @@ import { AdminMovieComponent } from './admin/admin-movie/admin-movie.component';
 import { ShowComponent } from './components/show/show.component';
 import { UserComponent } from './components/user/user.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 //Routing and Navigation
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'movies', component: MovieComponent},
   {path: 'genres', component: GenreComponent},
   {path: 'show', component: ShowComponent},
+  { path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({
