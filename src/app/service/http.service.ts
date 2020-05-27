@@ -71,6 +71,22 @@ export class HttpService {
   getGenre():Observable<Genre[]>{
     return this.http.get<Genre[]>(`${this.urlStart}genres`);
   }
+  postGenre(genreToAdd:any):Observable<Genre>{
+    return this.http.post<Genre>(`${this.urlStart}genres`,genreToAdd,httpOptions); //httpoptions sender en json
+}
+//delete
+  deleteGenre(genreToDelete:number):Observable<Genre>{
+    return this.http.delete<Genre>(`${this.urlStart}genres/${genreToDelete}`,httpOptions);
+}
+//update
+  updateGenre(genreIdFromHtml:number, genreToUpdate:Genre):Observable<Genre>{
+    return this.http.put<Genre>(`${this.urlStart}genres/${genreIdFromHtml}`, genreToUpdate , httpOptions);
+}
+//search
+  searchGenre(searchGenre:string):Observable<Genre>{
+    return this.http.get<Genre>(`${this.urlStart}genres/search?genre=${searchGenre}`, httpOptions);
+}
+
 
   //Movie
   //get
@@ -90,7 +106,6 @@ export class HttpService {
   updateMovie(movieIdFromHtml:number, movieToUpdate:Movie):Observable<Movie>{
     return this.http.put<Movie>(`${this.urlStart}movies/${movieIdFromHtml}`, movieToUpdate , httpOptions);
   }
-
 
   //search movieByTitle
   searchMovie(searchMovie:string):Observable<Movie>{

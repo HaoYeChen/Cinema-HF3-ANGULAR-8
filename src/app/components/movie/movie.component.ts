@@ -40,6 +40,7 @@ export class MovieComponent implements OnInit {
          this.genres = arg);
     //});
   }
+
     //post/add Movie
     postMovie(){
       //alert('klikker');

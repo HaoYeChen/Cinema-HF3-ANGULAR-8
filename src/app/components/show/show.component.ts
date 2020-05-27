@@ -20,27 +20,35 @@ export class ShowComponent implements OnInit {
   showId: number;
   showtime: number;
 
-  movie:Movie;
+  title: string;
+  showMovie: any[];
+
+  movies:Movie[];
   shows: Show[];
+  show: Show;
+
   constructor(private service:HttpService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.show = new Show();
     this.service.getShows()
       .subscribe(arg => {
         this.shows = arg;
         console.log(this.shows);
       });
+        this.service.getMovies()
+        .subscribe(arg =>
+          this.movies = arg);
 
 
-      this.route.queryParams.subscribe(
+      //this.route.queryParams.subscribe(
         //(objectReceived)=> this.movie = objectReceived["dataMovie"] // lige nu er det en string
-        (objectReceived)=> {
-          this.movie = JSON.parse(objectReceived["dataMovie"]) // dataMovie stammer fra movie.component.ts
+        //(objectReceived)=> {
+          //this.movies = JSON.parse(objectReceived["dataMovie"]) // dataMovie stammer fra movie.component.ts
           //og skal staves på samme måde
-          console.log(this.movie);
-        }
-      )
+          //console.log(this.movies);
+        //}
+      //)
   }
 
 }

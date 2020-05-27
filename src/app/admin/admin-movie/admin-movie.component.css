@@ -19,6 +19,8 @@ input{
   width: 50%;
   margin-left:auto;
   margin-right:auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .admin-movies td, .admin-movies th {

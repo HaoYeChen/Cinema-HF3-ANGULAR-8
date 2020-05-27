@@ -1,0 +1,22 @@
+input{
+  display: block;
+}
+
+.admin-movies td, .admin-movies th {
+  border: 1px solid black;
+  padding: 1px;
+  text-align:center;
+}
+
+.admin-movies tr:nth-child(even){background-color: #f2f2f2;}
+
+.admin-movies tr:hover {background-color: #E1A914 ;}
+
+.admin-movies th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0C70BD;
+  color: white;
+  text-align:center;
+}

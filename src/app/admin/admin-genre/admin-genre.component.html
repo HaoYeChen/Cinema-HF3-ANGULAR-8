@@ -1,1 +1,39 @@
-<p>admin-genre works!</p>
+<h1>Admin Genres</h1>
+<div class="flex-grid">
+  <div class="col">
+    <h2>Add Movie</h2>
+<form (ngSubmit)="postGenre()">
+  <label>Genre: </label><input type="text" name="genre" [(ngModel)]="genre" placeholder="add genre"> <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
+
+
+<!--submit button-->
+<br><input type="submit" value="Add Genre">
+</form>
+<div class="col">
+  <h2>Update & Search</h2>
+  <!-- [(ngModel)]="title" not definded fordi title er ikke defineret i movie.component.ts -->
+  <label for="">Genre:</label>       <input type="text"    [(ngModel)]="ggenre.genre">
+
+
+  <button (click)="updateGenre()">Update</button>
+  <button (click)="searchGenre()">Search</button>
+</div>
+</div>
+
+
+<div>
+  <table class="admin-movies">
+    <tr>
+      <th>GenreId</th>
+      <th>Genre</th>
+      <th>Delete Button</th>
+    </tr>
+    <tr *ngFor="let genreObj of genres">
+      <td>{{genreObj.genreId}}</td>
+      <td>{{genreObj.genre}}</td>
+      <td><button (click)="deleteGenre(genreObj.genreId)">Delete</button></td>
+      <!--<td><button (click)="allShowToMovie(movieObj)">see all shows</button></td>-->
+    </tr>
+
+  </table>
+  </div>
