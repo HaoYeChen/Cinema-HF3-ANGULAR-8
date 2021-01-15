@@ -1,3 +1,8 @@
+(PROJECT IS NOT DONE)
+This is a cinema project made in Angular 8 and it need web api https://github.com/HaoYeChen/Cinema-HF3-ASP.NET-CORE-WEB-API to function
+
+
+
 # Cinema001
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
